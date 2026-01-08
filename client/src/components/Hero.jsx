@@ -9,27 +9,32 @@ const Hero = () => {
   return (
     <div className="relative h-screen flex flex-col items-center justify-center gap-4 bg-gray-100 text-center overflow-hidden">
 
-      {/* Background blur effects */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-200 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-      <div className="absolute top-1/3 -right-20 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+      {/* Background blobs */}
+      <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+      <div className="absolute top-1/3 -right-20 w-96 h-96 bg-indigo-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
 
       {/* Heading */}
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-800 relative z-10">
+      <h1 className="text-4xl md:text-5xl font-bold text-gray-800 z-10">
         Cars on <span className="text-blue-600">Rent</span>
       </h1>
 
       {/* Form */}
-      <form className="flex flex-col md:flex-row items-start md:items-center justify-between p-6 rounded-lg md:rounded-full w-full max-w-4xl bg-white shadow-lg relative z-10">
+      <form className="flex flex-col md:flex-row items-start md:items-center gap-6 p-3 rounded-xl md:rounded-full w-full max-w-4xl bg-white shadow-xl z-10">
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:ml-6 w-full">
 
           {/* Pickup Location */}
-          <div className="flex flex-col items-start gap-2">
+          <div className="flex flex-col gap-1">
+            <p className="px-1 text-xs text-gray-500">
+              {pickupLocation ? "Selected location" : "Please select location"}
+            </p>
+
             <select
               required
               value={pickupLocation}
               onChange={(e) => setPickupLocation(e.target.value)}
-              className="border rounded-md px-3 py-1 text-sm"
+              className="border border-gray-300 rounded-lg px-4 py-2 text-sm 
+                         focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
             >
               <option value="">Pickup Location</option>
               {cityList.map((city) => (
@@ -38,10 +43,6 @@ const Hero = () => {
                 </option>
               ))}
             </select>
-
-            <p className="px-1 text-sm text-gray-500">
-              {pickupLocation ? pickupLocation : "Please select location"}
-            </p>
           </div>
 
           {/* Pickup Date */}
@@ -53,7 +54,8 @@ const Hero = () => {
               type="date"
               id="pickup-date"
               min={new Date().toISOString().split("T")[0]}
-              className="text-sm text-gray-500 border rounded-md px-2 py-1"
+              className="border border-gray-300 rounded-lg px-3 py-2 text-sm 
+                         focus:ring-2 focus:ring-blue-400 outline-none"
               required
             />
           </div>
@@ -66,15 +68,32 @@ const Hero = () => {
             <input
               type="date"
               id="return-date"
-              className="text-sm text-gray-500 border rounded-md px-2 py-1"
+              className="border border-gray-300 rounded-lg px-3 py-2 text-sm 
+                         focus:ring-2 focus:ring-blue-400 outline-none"
               required
             />
           </div>
         </div>
+
+        {/* Search Button */}
+        <button
+          type="submit"
+          className="flex items-center justify-center gap-2 px-10 py-3 
+                     bg-blue-600 hover:bg-blue-700 active:scale-95 
+                     text-white rounded-full transition-all duration-300 
+                     shadow-md max-sm:w-full"
+        >
+          <img
+            src={assets.search_icon}
+            alt="search"
+            className="w-4 h-4 brightness-200"
+          />
+          Search
+        </button>
       </form>
 
       {/* Description */}
-      <p className="text-gray-500 max-w-xl relative z-10">
+      <p className="text-gray-600 max-w-xl z-10">
         Book premium cars at affordable prices. Comfort, style & safety — all in one ride.
       </p>
 
@@ -82,7 +101,7 @@ const Hero = () => {
       <img
         src={assets.main_car}
         alt="car"
-        className="max-h-96 relative z-10 drop-shadow-2xl animate-float"
+        className="max-h-80 z-10 drop-shadow-2xl animate-float"
       />
     </div>
   );
