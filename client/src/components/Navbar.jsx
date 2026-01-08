@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
   const menuLinks = [
@@ -38,32 +39,43 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Right Section */}
+        {/* Desktop Right Section */}
         <div className="hidden lg:flex items-center gap-4">
           <div className="flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
             <input
               type="text"
-              className="py-1 w-40 bg-transparent outline-none placeholder-gray-400"
+              className="py-1 w-40 bg-transparent outline-none"
               placeholder="Search..."
             />
             <img src={assets.search_icon} alt="search" className="h-4" />
           </div>
 
-          <button className="px-5 py-2 rounded-lg text-gray-700 hover:bg-gray-100 transition">
+          <button
+            onClick={() => navigate("/owner")}
+            className="px-5 py-2 rounded-lg text-gray-700 hover:bg-gray-100"
+          >
             Dashboard
           </button>
 
-          <button className="px-6 py-2 rounded-lg bg-primary text-white hover:bg-primary-dull transition">
+          <button
+            onClick={() => setShowLogin(true)}
+            className="px-6 py-2 rounded-lg bg-primary text-white hover:bg-primary-dull"
+          >
             Login
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-2xl"
+          className="md:hidden cursor-pointer"
+          aria-label="Menu"
           onClick={() => setOpen(!open)}
         >
-          ☰
+          <img
+            src={open ? assets.close_icon : assets.menu_icon}
+            alt="menu"
+            className="h-6"
+          />
         </button>
       </div>
 
@@ -85,8 +97,20 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <button className="text-left">Dashboard</button>
-          <button className="bg-primary text-white py-2 rounded-lg">
+          <button
+            onClick={() => navigate("/owner")}
+            className="text-left font-medium"
+          >
+            Dashboard
+          </button>
+
+          <button
+            onClick={() => {
+              setShowLogin(true);
+              setOpen(false);
+            }}
+            className="bg-primary text-white py-2 rounded-lg"
+          >
             Login
           </button>
         </div>
