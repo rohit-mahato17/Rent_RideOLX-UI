@@ -19,7 +19,7 @@ const Navbar = ({ setShowLogin }) => {
 
         {/* Logo */}
         <Link to="/">
-          <img src={assets.logo} alt="logo" className="h-9" />
+          <img src={assets.logo} alt="logo" className="h-6" />
         </Link>
 
         {/* Desktop Menu */}
