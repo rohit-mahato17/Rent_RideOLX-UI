@@ -4,7 +4,7 @@ import { assets } from '../assets/assets'
 const Footer = () => {
     return (
         <div className='px-6 md:px-16 lg:px-24 xl:px-32 mt-60 text-gray-500'>
-            <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
+            <div className='flex flex-wrap justify-between gap-8 pb-6 border-borderColor border-b'>
                 <div className='max-w-80'>
                     <img src={assets.logo} alt="logo" className='mb-4 h-6 md:h-6' />
                     <p className='text-sm'>
@@ -31,20 +31,32 @@ const Footer = () => {
                 <div>
                     <h2 className='text-base font-medium text-gray-800 uppercase'>Resources</h2>
                     <ul className='mt-3 flex flex-col gap-1.5'>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Browse Cars</a></li>
-                        <li><a href="#">List Your Car</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Insurance</a></li>
                     </ul>
                 </div>
+
+                <div>
+                    <h2 className='text-base font-medium text-gray-800 uppercase'>Contact</h2>
+                    <ul className='mt-3 flex flex-col gap-1.5'>
+                        <li>1234 Luxury Drive</li>
+                        <li>San Francisco, CA 94107<li>
+                        <li>+1 98614 54321</li>
+                        <li>info@example.com</li>
+                    </ul>
+                </div>
+
+
 
             </div>
             <hr className='border-gray-300 mt-8' />
             <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
                 <p>© {new Date().getFullYear()} <a href="https://prebuiltui.com">PrebuiltUI</a>. All rights reserved.</p>
                 <ul className='flex items-center gap-4'>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Privacy</a> <span> | </span></li>
+                    <li><a href="#">Terms</a> <span> | </span></li>
                     <li><a href="#">Sitemap</a></li>
                 </ul>
             </div>
