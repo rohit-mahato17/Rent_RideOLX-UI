@@ -13,7 +13,7 @@
    --color-borderColor: #c4c7d2
 }
 
-/* @keyframes float {
+@keyframes float {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
@@ -21,4 +21,4 @@
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
-} */
+}

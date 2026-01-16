@@ -17,7 +17,6 @@ const Banner = () => {
              </div>
 
              <img src={assets.banner_car_image} alt="car" className="max-h-45 mt-10"/>
-
         </div>
     )
 }

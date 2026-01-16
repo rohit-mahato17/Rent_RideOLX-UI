@@ -7,11 +7,12 @@ const Navbar = ({ setShowLogin }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
-  const menuLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-  ];
+const menuLinks = [
+  { name: "Home", path: "/" },
+  { name: "Cars", path: "/cars" },                
+  { name: "My Bookings", path: "/my-bookings" },   
+];
+
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-gray-200">
