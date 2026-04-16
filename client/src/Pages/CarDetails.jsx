@@ -50,7 +50,7 @@ const CarDetails = () => {
           <div className="space-y-6">
 
             <div>
-              {/* ❗ fixed duplicate brand */}
+              {/*fixed duplicate brand */}
               <h1 className="text-3xl font-bold">
                 {car.brand} {car.model}
               </h1>
@@ -78,7 +78,7 @@ const CarDetails = () => {
 
             {/* Description */}
             <div>
-              {/* ❗ FIXED JSX ERROR */}
+              {/FIXED JSX ERROR */}
               <h1 className="text-xl font-medium mb-3">Description</h1>
               <p className="text-gray-500">{car.description}</p>
             </div>
@@ -87,7 +87,7 @@ const CarDetails = () => {
             <div>
               <h1 className="text-xl font-medium mb-3">Features</h1>
 
-              {/* ❗ FIXED grid typo */}
+              {/*FIXED grid typo */}
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {["360 Camera", "Bluetooth", "GPS", "Heated Seats", "Rear View Mirror"].map((item) => (
                   <li key={item} className="flex items-center text-gray-500">
@@ -107,7 +107,7 @@ const CarDetails = () => {
           className="shadow-lg h-max sticky top-20 rounded-xl p-6 space-y-6 text-gray-500"
         >
 
-          {/* ❗ FIXED closing tag */}
+          {/*FIXED closing tag */}
           <p className="flex items-center justify-between text-2xl text-gray-800 font-semibold">
             {currency}{car.pricePerDay}
             <span className="text-base text-gray-400 font-normal">
@@ -121,7 +121,7 @@ const CarDetails = () => {
           <div className="flex flex-col gap-2">
             <label htmlFor="pickup-date">Pick Date</label>
 
-            {/* ❗ FIXED type="date" */}
+            {/*FIXED type="date" */}
             <input
               type="date"
               className="border border-borderColor px-3 py-2 rounded-lg"
@@ -135,7 +135,7 @@ const CarDetails = () => {
           <div className="flex flex-col gap-2">
             <label htmlFor="return-date">Return Date</label>
 
-            {/* ❗ FIXED type */}
+            {/*FIXED type*/}
             <input
               type="date"
               className="border border-borderColor px-3 py-2 rounded-lg"
