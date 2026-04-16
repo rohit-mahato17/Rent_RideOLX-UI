@@ -29,39 +29,39 @@ const Testimonial = () => {
   ];
 
   return (
-    <div className="py-28 px-6 md:px-16 lg:px-24 xl:px-44">
+    <div className="py-20 md:py-28 px-4 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto w-full">
 
       <Title
         title="What Our Customers Say"
-        subTitle="Discover why discerning travelers choose StayVenture for their luxury accommodations around the world."
+        subTitle="Discover why discerning travelers choose RentRide for their premium car rentals around the world."
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16 w-full">
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="bg-white p-6 rounded-xl shadow-lg hover:-translate-y-1 transition-all duration-500"
+            className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <img
-                className="w-12 h-12 rounded-full"
+                className="w-14 h-14 rounded-full object-cover shadow-sm bg-slate-50"
                 src={testimonial.image}
                 alt={testimonial.name}
               />
               <div>
-                <p className="text-xl font-semibold">{testimonial.name}</p>
-                <p className="text-gray-500 text-sm">{testimonial.location}</p>
+                <p className="text-lg font-bold text-slate-800">{testimonial.name}</p>
+                <p className="text-accent text-sm font-medium">{testimonial.location}</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-1 mt-4">
+            <div className="flex items-center gap-1 mt-6">
               {Array(5).fill(0).map((_, index) => (
-                <img key={index} src={assets.star_icon} alt="star-icon" />
+                <img key={index} src={assets.star_icon} alt="star-icon" className="w-4 h-4 opacity-70" />
               ))}
             </div>
 
-            <p className="text-gray-500 mt-4 font-light">
-              {testimonial.testimonial}
+            <p className="text-slate-600 mt-4 leading-relaxed font-light">
+              "{testimonial.testimonial}"
             </p>
           </div>
         ))}

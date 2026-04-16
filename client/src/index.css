@@ -1,16 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300..900&display=swap');
 
 @import "tailwindcss";
 
-*{
+* {
    font-family: "Outfit", sans-serif;
 }
 
 @theme {
-   --color-primary: #2563EB;
-   --color-primary-dull: #1F58D8;
-   --color-light: #F1F5F9;
-   --color-borderColor: #c4c7d2
+   --color-primary: #0F172A; /* Midnight blue / Slate 900 */
+   --color-primary-dull: #1E293B; /* Slate 800 */
+   --color-accent: #2563EB; /* Vibrant Blue */
+   --color-accent-hover: #1D4ED8;
+   --color-light: #F8FAFC; 
+   --color-borderColor: #E2E8F0; 
+}
+
+html, body {
+   scroll-behavior: smooth;
+   background-color: var(--color-light);
+   color: #334155; /* Slate 700 */
 }
 
 @keyframes float {
@@ -21,4 +29,20 @@
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }

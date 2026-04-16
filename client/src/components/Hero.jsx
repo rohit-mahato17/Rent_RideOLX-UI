@@ -7,36 +7,38 @@ const Hero = () => {
   const [pickupLocation, setPickupLocation] = useState("");
 
   return (
-    <div className="relative h-screen flex flex-col items-center justify-center gap-4 bg-gray-100 text-center overflow-hidden">
+    <div className="relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-6 md:gap-8 bg-slate-50 text-center overflow-hidden pt-10 pb-20 px-4 md:px-8">
 
       {/* Background blobs */}
-      <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-300 rounded-full blur-3xl opacity-40 animate-pulse"></div>
-      <div className="absolute top-1/3 -right-20 w-96 h-96 bg-indigo-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-[80px] opacity-60 animate-pulse"></div>
+      <div className="absolute top-1/2 right-[-10%] w-[500px] h-[500px] bg-indigo-300/20 rounded-full blur-[100px] opacity-50 animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       {/* Heading */}
-      <h1 className="text-4xl md:text-5xl font-bold text-gray-800 z-10">
-        Cars on <span className="text-blue-600">Rent</span>
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-800 z-10 tracking-tight max-w-4xl leading-tight">
+        Experience the Perfect <span className="text-accent">Ride</span>
       </h1>
+      
+      {/* Description */}
+      <p className="text-slate-500 text-lg md:text-xl max-w-2xl z-10 mx-auto px-4 font-light">
+        Book premium cars at affordable prices. Comfort, style, and safety — all in one ride.
+      </p>
 
       {/* Form */}
-      <form className="flex flex-col md:flex-row items-start md:items-center gap-6 p-3 rounded-xl md:rounded-full w-full max-w-4xl bg-white shadow-xl z-10">
+      <form className="glass-card flex flex-col lg:flex-row items-center gap-4 lg:gap-6 p-4 md:p-6 rounded-2xl lg:rounded-full w-full max-w-5xl z-10 mt-4 md:mt-8">
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-8 md:ml-6 w-full">
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-6 w-full lg:flex-1 pl-2">
 
           {/* Pickup Location */}
-          <div className="flex flex-col gap-1">
-            <p className="px-1 text-xs text-gray-500">
-              {pickupLocation ? "Selected location" : "Please select location"}
-            </p>
-
+          <div className="flex flex-col items-start gap-1.5 w-full md:w-auto md:flex-1 relative">
+            <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider ml-1">Location</label>
             <select
               required
               value={pickupLocation}
               onChange={(e) => setPickupLocation(e.target.value)}
-              className="border border-gray-300 rounded-lg px-4 py-2 text-sm 
-                         focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800
+                         focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition hover:bg-slate-50 cursor-pointer appearance-none"
             >
-              <option value="">Pickup Location</option>
+              <option value="" disabled>Select your city...</option>
               {cityList.map((city) => (
                 <option key={city} value={city}>
                   {city}
@@ -45,31 +47,35 @@ const Hero = () => {
             </select>
           </div>
 
+          <div className="hidden md:block w-px h-10 bg-slate-200"></div>
+
           {/* Pickup Date */}
-          <div className="flex flex-col items-start gap-2">
-            <label htmlFor="pickup-date" className="text-sm font-medium">
+          <div className="flex flex-col items-start gap-1.5 w-full md:w-auto md:flex-1">
+            <label htmlFor="pickup-date" className="text-xs font-semibold text-slate-500 uppercase tracking-wider ml-1">
               Pickup Date
             </label>
             <input
               type="date"
               id="pickup-date"
               min={new Date().toISOString().split("T")[0]}
-              className="border border-gray-300 rounded-lg px-3 py-2 text-sm 
-                         focus:ring-2 focus:ring-blue-400 outline-none"
+              className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800
+                         focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition hover:bg-slate-50"
               required
             />
           </div>
 
+          <div className="hidden md:block w-px h-10 bg-slate-200"></div>
+
           {/* Return Date */}
-          <div className="flex flex-col items-start gap-2">
-            <label htmlFor="return-date" className="text-sm font-medium">
+          <div className="flex flex-col items-start gap-1.5 w-full md:w-auto md:flex-1">
+            <label htmlFor="return-date" className="text-xs font-semibold text-slate-500 uppercase tracking-wider ml-1">
               Return Date
             </label>
             <input
               type="date"
               id="return-date"
-              className="border border-gray-300 rounded-lg px-3 py-2 text-sm 
-                         focus:ring-2 focus:ring-blue-400 outline-none"
+              className="w-full bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-3 text-sm text-slate-800
+                         focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition hover:bg-slate-50"
               required
             />
           </div>
@@ -78,31 +84,29 @@ const Hero = () => {
         {/* Search Button */}
         <button
           type="submit"
-          className="flex items-center justify-center gap-2 px-10 py-3 
-                     bg-blue-600 hover:bg-blue-700 active:scale-95 
-                     text-white rounded-full transition-all duration-300 
-                     shadow-md max-sm:w-full"
+          className="flex items-center justify-center gap-2 w-full lg:w-auto px-8 py-4 lg:py-4 
+                     bg-accent hover:bg-accent-hover active:scale-[0.98] 
+                     text-white rounded-xl lg:rounded-full font-medium transition-all duration-300 
+                     shadow-lg shadow-accent/30 mt-2 lg:mt-0"
         >
           <img
             src={assets.search_icon}
             alt="search"
             className="w-4 h-4 brightness-200"
           />
-          Search
+          Search Cars
         </button>
       </form>
 
-      {/* Description */}
-      <p className="text-gray-600 max-w-xl z-10">
-        Book premium cars at affordable prices. Comfort, style & safety — all in one ride.
-      </p>
-
       {/* Car Image */}
-      <img
-        src={assets.main_car}
-        alt="car"
-        className="max-h-80 z-10 drop-shadow-2xl animate-float"
-      />
+      <div className="relative w-full max-w-4xl mt-4 md:mt-12 z-10 flex justify-center">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-[20%] bg-black/10 blur-xl rounded-full"></div>
+        <img
+          src={assets.main_car}
+          alt="Sports Car"
+          className="w-[90%] md:w-[80%] max-w-[800px] h-auto object-contain z-10 drop-shadow-2xl animate-float"
+        />
+      </div>
     </div>
   );
 };
