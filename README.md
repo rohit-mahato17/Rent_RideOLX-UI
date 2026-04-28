@@ -36,7 +36,7 @@ This project allows users to explore cars, view details, and simulate booking wi
 ## 🖼️ Screenshots
 
 <p align="center">
-  <img src="preview.png" alt="Weather App UI Preview" width="50%">
+  <img src="Screenshot.png" alt="RentRide" width="90%">
 </p>
 
 ### 🏠 Car Listing Page
