@@ -67,13 +67,12 @@ This project allows users to explore cars, view details, and simulate booking wi
 
 ## 🖼️ Screenshots
 
-### 🏠 Car Listing Page
-
-![Cars Page](./assets/cars-page.png)
-
 ### 🚘 Car Details & Booking Page
 
-![Car Details](./assets/car-details.png)
+<p align="center">
+  <img src="image.png" alt="RentRide" width="90%">
+</p>
+
 
 ---
 
