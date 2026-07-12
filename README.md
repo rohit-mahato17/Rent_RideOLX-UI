@@ -73,7 +73,6 @@ This project allows users to explore cars, view details, and simulate booking wi
   <img src="image.png" alt="RentRide" width="90%">
 </p>
 
-
 ---
 
 ## 🎨 UI Highlights
